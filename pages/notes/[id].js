@@ -5,7 +5,8 @@ const Page = () => {
   const router = useRouter()
 
   const { id } = router.query
-  console.log('hi')
+  console.log(router.query)
+  // console.log('hi')
   const test = 'hi'
   return (
     <div>
