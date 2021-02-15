@@ -13,13 +13,28 @@ const theme = {
     page: {
       width: '100%',
       maxWidth: '960px',
+      p: 3,
       m: 0,
       mx: 'auto',
     },
   },
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      '&:hover': {
+        bg: 'text',
+      },
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
+  },
+
   styles: {
     ...roboto.styles,
   },
 }
-console.log(theme)
+// console.log(theme)
 export default theme
