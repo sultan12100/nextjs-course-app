@@ -3,11 +3,8 @@
 import { jsx, Button } from 'theme-ui'
 import Link from 'next/link'
 
-export default () => {
-  const notes = new Array(15)
-    .fill(1)
-    .map((e, i) => ({ id: i, title: `This is my note ${i}` }))
-
+const Page = ({ notes }) => {
+  console.log(notes)
   return (
     <div sx={{ variant: 'containers.page' }}>
       <h1>My Notes</h1>
@@ -35,4 +32,13 @@ export default () => {
       <Button variant="secondary">Add note</Button>
     </div>
   )
+}
+export default Page
+export async function getServerSideProps(/*context*/) {
+  const res = await fetch(`${process.env.API_URL}/api/notes`)
+  const { notes } = await res.json()
+  console.log(notes)
+  return {
+    props: { notes },
+  }
 }

@@ -12,7 +12,7 @@ const handler = nc()
       res.status(404).json(errorMessage(404))
     }
 
-    res.json({ data: note })
+    res.json({ note: note })
   })
   .patch((req, res) => {
     const note = getNote(req.query.id)
@@ -25,7 +25,7 @@ const handler = nc()
     const updated = { ...note, ...req.body }
 
     notes[i] = updated
-    res.json({ data: updated })
+    res.json({ note: updated })
   })
   .delete((req, res) => {
     const note = getNote(req.query.id)
@@ -37,7 +37,7 @@ const handler = nc()
 
     notes.splice(i, 1)
 
-    res.json({ data: req.query.id })
+    res.json({ note: req.query.id })
   })
 
 export default handler
