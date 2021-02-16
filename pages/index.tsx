@@ -8,6 +8,7 @@ const SponsoreAd = dynamic(() => import('../src/components/SponsoreAd'), {
   ssr: false,
   loading: () => <p>...</p>,
 })
+
 export default ({ content }) => (
   <div sx={{ height: `calc(100vh - 60px)` }}>
     <div
