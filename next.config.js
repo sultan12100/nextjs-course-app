@@ -2,11 +2,13 @@
 // module.exports = withCSS({})
 
 // // old way for versions lower than 9.4
-// const nextEnv = require('next-env')
-// const dotenvLoad = require('dotenv-load')
-// dotenvLoad()
-// const withEnv = nextEnv()
-// module.exports = withEnv()
+const nextEnv = require('next-env')
+const dotenvLoad = require('dotenv-load')
+
+dotenvLoad()
+
+const withNextEnv = nextEnv()
+module.exports = withNextEnv()
 
 // you can export an object
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')

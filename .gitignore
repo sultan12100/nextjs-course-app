@@ -3,4 +3,5 @@ dist
 public
 .next
 .env*.local
+.env
 package-lock.json
